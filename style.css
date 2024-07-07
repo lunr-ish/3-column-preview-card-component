@@ -28,6 +28,11 @@ body {
   font-family: var(--ff-lexend-deca);
   font-weight: var(--fw-regular);
   font-size: 0.9375rem;
+  padding: 1.5rem;
+  background: hsl(var(--clr-grey));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
@@ -64,4 +69,74 @@ h2 {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.card-group {
+  max-width: 57.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.card {
+  --_clr-card-bg: var(--clr-card-bg, var(--clr-orange));
+  --_clr-card-action: var(--clr-card-action, var(--clr-orange));
+
+  max-width: 20.4375rem;
+  background: hsl(var(--_clr-card-bg));
+  color: hsl(var(--clr-white) / 75%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+
+  transition-duration: 200ms;
+}
+
+.card-cyan {
+  --clr-card-bg: var(--clr-cyan);
+  --clr-card-action: var(--clr-cyan);
+}
+
+.card-teal {
+  --clr-card-bg: var(--clr-teal);
+  --clr-card-action: var(--clr-teal);
+}
+
+.card__title {
+  color: hsl(var(--clr-grey));
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.card__description {
+  line-height: 1.65;
+  flex: 1;
+}
+
+.card__action {
+  width: fit-content;
+  margin-bottom: 0.625rem;
+  padding: 0.75rem 1.85rem;
+  border: 2px solid transparent;
+  border-radius: 5rem;
+  background: hsl(var(--clr-grey));
+  color: hsl(var(--_clr-card-action));
+}
+
+.card__action:is(:hover, :focus-visible) {
+  background: transparent;
+  color: hsl(var(--clr-grey));
+  border-color: hsl(var(--clr-grey));
+}
+
+@media (min-width: 60.5rem) {
+  .card-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    min-height: 500px;
+  }
 }
