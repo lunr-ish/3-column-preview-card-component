@@ -1,3 +1,17 @@
+:root {
+  --clr-orange: 31 77% 52%;
+  --clr-cyan: 184 100% 22%;
+  --clr-teal: 179 100% 13%;
+  --clr-white: 0 0% 100%;
+  --clr-grey: 0 0% 95%;
+
+  --ff-lexend-deca: "Lexend Deca", sans-serif;
+  --ff-big-shoulders-display: "Big Shoulders Display", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
 *,
 *::before,
 *::after {
@@ -11,6 +25,9 @@
 body {
   width: 100%;
   min-height: 100vh;
+  font-family: var(--ff-lexend-deca);
+  font-weight: var(--fw-regular);
+  font-size: 0.9375rem;
 }
 
 img {
@@ -31,4 +48,10 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-big-shoulders-display);
+  font-weight: var(--fw-bold);
 }
